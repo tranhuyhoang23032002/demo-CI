@@ -1,0 +1,122 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin người dùng</title>
+    <!-- Import tệp CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Thông tin người dùng</h1>
+    
+    <!-- Form để nhập dữ liệu người dùng -->
+    <form id="userForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <!-- Bảng để hiển thị dữ liệu từ MongoDB -->
+<!--     <table id="userData">
+        <thead>
+          <tr>
+            <th>Tên người dùng </th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Vị trí</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Người dùng 1</td>
+                <td>Số điện thoại 1</td>
+                <td>Địa chỉ 1</td>
+                <td>Vị trí 1</td>
+                <td>
+                    <button onclick="editUser('Người dùng 1', 'Số điện thoại 1', 'Địa chỉ 1', 'Vị trí 1')">Chỉnh sửa</button>
+                    <button onclick="deleteUser('Người dùng 1')">Xoá</button>
+                </td>
+            </tr>
+            <!-- Thêm các hàng khác tương tự -->
+        </tbody>
+    </table> -->
+
+    <!-- This table displays user data in a structured format -->
+<table id="userData">
+    <!-- Table header defining the column names -->
+    <thead>
+        <tr>
+            <!-- Column for the user's name -->
+            <th>Tên người dùng</th>
+            <!-- Column for the user's phone number -->
+            <th>Số điện thoại</th>
+            <!-- Column for the user's address -->
+            <th>Địa chỉ</th>
+            <!-- Column for the user's position -->
+            <th>Vị trí</th>
+            <!-- Column for actions like editing or deleting user data -->
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- A row representing an individual user's data -->
+        <tr>
+            <!-- Cell containing the name of the user -->
+            <td>Người dùng 1</td>
+            <!-- Cell containing the phone number of the user -->
+            <td>Số điện thoại 1</td>
+            <!-- Cell containing the address of the user -->
+            <td>Địa chỉ 1</td>
+            <!-- Cell containing the position of the user -->
+            <td>Vị trí 1</td>
+            <!-- Cell containing action buttons for the user data -->
+            <td>
+                <!-- Button to edit the user's information, calls editUser function with parameters -->
+                <button onclick="editUser('Người dùng 1', 'Số điện thoại 1', 'Địa chỉ 1', 'Vị trí 1')">Chỉnh sửa</button>
+                <!-- Button to delete the user's data, calls deleteUser function with the user's name as parameter -->
+                <button onclick="deleteUser('Người dùng 1')">Xoá</button>
+            </td>
+        </tr>
+        <!-- Additional rows for other users would be added here in a similar format -->
+    </tbody>
+</table>
+
+
+
+    <!-- Form để nhập thông tin chỉnh sửa -->
+    <div id="editForm" style="display: none;">
+        <label for="editUsername">Username:</label>
+        <input type="text" id="editUsername" disabled>
+
+        <label for="editPhone">Phone:</label>
+        <input type="text" id="editPhone">
+
+        <label for="editAddress">Address:</label>
+        <input type="text" id="editAddress">
+
+        <label for="editLocation">Location:</label>
+        <input type="text" id="editLocation">
+
+        <button onclick="saveEdit()">Lưu chỉnh sửa</button>
+        <button onclick="cancelEdit()">Hủy bỏ</button>
+    </div>
+
+
+    <!-- Import tệp JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

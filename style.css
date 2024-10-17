@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Thêm CSS cho nút chức năng */
+.action-buttons {
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    margin-right: 10px;
+}
